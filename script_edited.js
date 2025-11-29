@@ -30,7 +30,8 @@ function applyReplacements(text) {
     .replace(/♀/g, "[female]")
     .replace(/⚥/g, "[intersex]")
     .replace(/\\"/g, '"')
-    .replace(/\\n/g, " [new line] ");
+    .replace(/\\n/g, "
+             ");
 }
 
 // Remove blocks
