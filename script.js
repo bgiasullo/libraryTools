@@ -1,13 +1,14 @@
 // Text blocks to remove
 const removeBlocks = [
-  ` [{"task":"T4","value":"': "",
-    ","taskType":"textFromSubject"},{"task":"T1","task_type":"dropdown-simple","value":{"select_label":"Main Dropdown","option":true,"value":1,"label":"Page is blank"}}]`,
+  `[{"task":"T4","value":"`,
+  
+  `","taskType":"textFromSubject"},{"task":"T1","task_type":"dropdown-simple","value":{"select_label":"Main Dropdown","option":true,"value":1,"label":"Page is blank"}}]`,
 
-  `    ","taskType":"textFromSubject"},{"task":"T1","task_type":"dropdown-simple","value":{"select_label":"Main Dropdown","option":true,"value":0,"label":"Corrections made"}}]`,
+  `","taskType":"textFromSubject"},{"task":"T1","task_type":"dropdown-simple","value":{"select_label":"Main Dropdown","option":true,"value":0,"label":"Corrections made"}}]`,
 
-  `    ","taskType":"textFromSubject"},{"task":"T1","task_type":"dropdown-simple","value":{"select_label":"Main Dropdown","option":true,"value":2,"label":"No corrections needed"}}]`,
+  `","taskType":"textFromSubject"},{"task":"T1","task_type":"dropdown-simple","value":{"select_label":"Main Dropdown","option":true,"value":2,"label":"No corrections needed"}}]`,
 
-  `    ","taskType":"textFromSubject"},{"task":"T1","task_type":"dropdown-simple","value":{"select_label":"Main Dropdown","option":true,"value":3,"label":"Text is illegible"}}]`
+  `","taskType":"textFromSubject"},{"task":"T1","task_type":"dropdown-simple","value":{"select_label":"Main Dropdown","option":true,"value":3,"label":"Text is illegible"}}]`
 ];
 
 // Replace sequences
@@ -20,7 +21,8 @@ function applyReplacements(text) {
     .replace(/♂/g, "[male]")
     .replace(/♀/g, "[female]")
     .replace(/⚥/g, "[intersex]")
-    .replace(/\\"/g, '"');
+    .replace(/\\"/g, '"')
+    .replace(/\\n/g, " ");
 }
 
 // Remove blocks
@@ -94,13 +96,13 @@ function processCSV() {
         return { ...row, annotations: txt };
       });
 
-      // Group by subject_id
+      // Group by subject_ids
       status.textContent = "Comparing annotations...";
 
       const groups = {};
       for (const row of rows) {
-        if (!groups[row.subject_id]) groups[row.subject_id] = [];
-        groups[row.subject_id].push(row.annotations);
+        if (!groups[row.subject_ids]) groups[row.subject_ids] = [];
+        groups[row.subject_ids].push(row.annotations);
       }
 
       const finalRows = [];
@@ -110,7 +112,7 @@ function processCSV() {
 
         if (annos.length === 1) {
           finalRows.push({
-            subject_id: subjectId,
+            subject_ids: subjectId,
             annotations: annos[0]
           });
           continue;
@@ -133,7 +135,7 @@ function processCSV() {
         const choice = Math.random() < 0.5 ? bestA : bestB;
 
         finalRows.push({
-          subject_id: subjectId,
+          subject_ids: subjectId,
           annotations: choice
         });
       }
