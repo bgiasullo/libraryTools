@@ -8,10 +8,9 @@
   
   <div class="container">
     <h1>Briana Giasullo Library Tools</h1>
-    <p>My attempt at making my life easier with some library-related tools.</p>
+    <p>My attempt at making my life easier with some library-related tools. I focus on simplicity.</p>
   </div>
 
-    <hr>
 
     <div class="container">
 
@@ -22,9 +21,10 @@
 
       <details>
 
-        <summary>Zooniverse Data Cleanup</summary>
-        <h2>Zooniverse Data Cleanup</h2>
-    <p>This tool accepts a CSV file and performs the following steps:</p>
+        <summary>Zooniverse data cleanup and BHL prep</summary>
+        <h3>Zooniverse Data Cleanup</h3>
+
+    <p>Useful if you download transcription data from Zooniverse and need to prepare it for upload into BHL. Accepts a CSV file and performs the following actions:</p>
      <ol>
          <li>Removes all but the necessary columns (annotations and subject_ids) from your Zooniverse data file</li>
   <li>Removes extraneous text (things like [{"task":"T4","value":")</li>
@@ -55,17 +55,21 @@
       </details>
       </div>
 
-      <hr>
 
       <div class="tool">
 
       <details>
         <summary>Split text file into multiple files</summary>
         
-        <h2>Split text file into multiple files</h2>
-  <p>Uploads a .txt file, splits on <code>Image &lt;number&gt;</code>, removes the marker and a leading “Transcription:”, preserves line breaks, and allows individual or ZIP download.</p>
+        <h3>Split text file into multiple files</h3>
 
+        <p>Useful if you have a plain text file containing multiple image transcriptions, each separated by Image [number]. Accepts a plain text file and performs the following actions:</p>
 
+        <ol>
+          <li>Splits the text file by Image [numer] into multiple files</li>
+          <li>Removes the Image [number] header and the leading 'Transcription:' if needed</li>
+          <li>Produces a ZIP file containing all text files for download</li>
+        </ol>
 
   <div class="controls">
     <input id="fileInput" type="file" accept=".txt">
@@ -93,14 +97,15 @@
 </div>
 
     
-    <hr>
     
     <div class="container">
       
-     <h3>To do list</h3>
+     <h2>To do list</h2>
     <ul>
       <li>Many text files into one text file converter</li>
     </ul>
+
+
    
         </div>
 
