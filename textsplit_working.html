@@ -118,7 +118,25 @@ function splitByImage(text) {
   }
   return out;
 }
+  
+// ------------------ ZIP Download ------------------
+$('downloadZip').onclick = async () => {
+  if (!splitFiles.length) return;
+  setStatus('Creating ZIP...');
 
+  const zip = new JSZip();
+  splitFiles.forEach(f => zip.file(f.name, f.blob));
+
+  const blob = await zip.generateAsync({type: 'blob'});
+  saveAs(blob, 'image_splits.zip');
+  setStatus(`ZIP downloaded.`);
+};
+
+// Show file name on selection
+fileInput.onchange = () => {
+  if (fileInput.files[0]) setStatus('Selected: ' + fileInput.files[0].name);
+};
+  
 // Build download list
 function buildList(parts) {
   outputList.innerHTML = '';
@@ -149,23 +167,6 @@ function buildList(parts) {
   });
 }
 
-// ------------------ ZIP Download ------------------
-$('downloadZip').onclick = async () => {
-  if (!splitFiles.length) return;
-  setStatus('Creating ZIP...');
-
-  const zip = new JSZip();
-  splitFiles.forEach(f => zip.file(f.name, f.blob));
-
-  const blob = await zip.generateAsync({type: 'blob'});
-  saveAs(blob, 'image_splits.zip');
-  setStatus(`ZIP downloaded.`);
-};
-
-// Show file name on selection
-fileInput.onchange = () => {
-  if (fileInput.files[0]) setStatus('Selected: ' + fileInput.files[0].name);
-};
 </script>
 </body>
 </html>
