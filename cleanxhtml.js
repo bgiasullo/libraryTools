@@ -31,7 +31,7 @@ function processFile(text) {
 }
 
 function downloadCSV(rows) {
-  let csv = "text\n";
+  let csv = "Text\n";
   rows.forEach(r => {
     // Escape quotes
     const safe = r[0].replace(/"/g, '""');
