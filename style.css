@@ -13,9 +13,9 @@ button {
 }
 
 .container {
-    border: 4px double dodgerblue;
+    border: 1px dashed dodgerblue;
     margin: 12px auto;
-    padding: 22px;
+    padding: 12px;
     max-width: 988px;
 }
 
