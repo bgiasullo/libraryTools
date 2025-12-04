@@ -6,7 +6,7 @@
     <title>Library Tools</title>
     <link rel="stylesheet" href="style.css">
 
-     <div class="container">
+    <div class="container">
     <h2>BHL tools</h2>
 
     <div class="tool">
@@ -20,7 +20,7 @@
             <p>This will parse the XHTML and output only the text you need as a CSV file. You can then get the BHL page IDs and sequence numbers, confirm the text aligns to the correct pages, and import to BHL.
              </p>
 
-<input type="file" id="fileInput" accept=".xhtml" />
+<input type="file" id="fileInputXHTML" accept=".xhtml" />
 <button id="processBtnXhtml">Process File</button>
 <br><br>
 <a id="downloadLink"></a>
@@ -44,7 +44,6 @@
             <details>
                 <summary>Split text file into multiple files</summary>
 
-                <h3>Split text file into multiple files</h3>
 
                 <p>Useful if you have a plain text file containing multiple image transcriptions, each separated by Image [number], and need to separate them for upload to Zooniverse. Accepts a plain text file and performs the following actions:</p>
 
@@ -55,14 +54,14 @@
                 </ol>
 
                 <div class="controls">
-                    <input id="fileInput" type="file" accept=".txt">
-                    <button id="processBtn">Process</button>
-                    <button id="clearBtn">Clear</button>
+                    <input id="fileInputText" type="file" accept=".txt">
+                    <button id="processBtnText">Process</button>
+                    <button id="clearBtnText">Clear</button>
                 </div>
 
                 <ul id="outputList" hidden></ul>
 
-                <div id="status" class="small"></div>
+                <div id="statusText" class="small"></div>
 
                 <div id="zipWrap" hidden>
 
@@ -82,7 +81,6 @@
             <details>
 
                 <summary>Zooniverse data cleanup and BHL prep</summary>
-                <h3>Zooniverse Data Cleanup</h3>
 
                 <p>Useful if you download transcription data from Zooniverse and need to prepare it for upload into BHL. Accepts a CSV file and performs the following actions:</p>
                 <ol>
@@ -102,7 +100,7 @@
 
                 <button onclick="processCSV()">Process CSV</button>
 
-                <div id="status"></div>
+                <div id="statusCSV"></div>
 
                 <h3>Next steps</h3>
 
@@ -115,6 +113,7 @@
         </div>
 
     </div>
+
 
 
     </body>
