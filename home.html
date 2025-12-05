@@ -48,14 +48,14 @@
         <div class="tool">
 
             <details>
-                <summary>Split text file into multiple files</summary>
+                <summary>Split text file into multiple files on image [number]</summary>
 
 
                 <p>Useful if you have a plain text file containing multiple image transcriptions, each separated by Image [number], and need to separate them for upload to Zooniverse. Accepts a plain text file and performs the following actions:</p>
 
                 <ol>
-                    <li>Splits the text file by Image [number] into multiple files</li>
-                    <li>Removes the Image [number] header and the leading 'Transcription:' if needed</li>
+                    <li>Splits the text file by image [number] into multiple files</li>
+                    <li>Removes the image [number] header and the leading 'transcription:' if needed</li>
                     <li>Produces a ZIP file containing all text files for download</li>
                 </ol>
 
@@ -96,6 +96,8 @@
                     <li>Produces a ZIP file containing all text files for download</li>
                 </ol>
 
+                <input id="splitString" type="text">
+                
                 <div class="controls">
                     <input id="fileInputString" type="file" accept=".txt">
                     <button id="processBtnString">Process</button>
