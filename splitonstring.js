@@ -1,4 +1,4 @@
-const $ = id => document.getElementById(id);
+$ = id => document.getElementById(id);
 
 const fileInputString = $('fileInputString');
 const statusString = $('statusString');
