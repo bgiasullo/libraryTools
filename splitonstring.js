@@ -14,7 +14,7 @@ $('processBtnString').onclick = handleString;
 function setStatusString(t) { statusString.textContent = t; }
 
 function resetUI() {
-  zipWrap.hidden = true;
+  zipWrapString.hidden = true;
   splitFiles = [];
   setStatusString('');
   fileInputString.value = '';
@@ -48,7 +48,7 @@ function handleString() {
         };
       });
 
-      zipWrap.hidden = false;
+      zipWrapString.hidden = false;
       setStatusString(`Prepared ${parts.length} file(s).`);
     } catch (err) {
       console.error(err);
