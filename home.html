@@ -82,6 +82,43 @@
 
         </div>
 
+         <div class="tool">
+
+            <details>
+                <summary>Split text file into multiple files on instances of string input</summary>
+
+
+                <p>Useful if you have a plain text file containing multiple image transcriptions, each separated by a text string of your choosing, and need to separate them for upload to Zooniverse. Accepts a plain text file and performs the following actions:</p>
+
+                <ol>
+                    <li>Prompts you for a string of text</li>
+                    <li>Splits the text file on the string you entered into multiple files</li>
+                    <li>Produces a ZIP file containing all text files for download</li>
+                </ol>
+
+                <div class="controls">
+                    <input id="fileInputString" type="file" accept=".txt">
+                    <button id="processBtnString">Process</button>
+                    <button id="clearBtnString">Clear</button>
+                </div>
+
+                <ul id="outputList" hidden></ul>
+
+                <div id="statusString" class="small"></div>
+
+                <div id="zipWrapString" hidden>
+
+                    <button id="downloadZip">Download zipped text files</button>
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+                <script src="splitWithString.js"></script>
+
+            </details>
+
+        </div>
+        
         <div class="tool">
 
             <details>
