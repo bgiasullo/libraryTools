@@ -137,7 +137,7 @@ function processCSV() {
       statusCSV.textContent = "Preparing download...";
 
       const outCSV = Papa.unparse(finalRows);
-      const blob = new Blob([outCSV], { type: "text/csv" });
+      const blob = new Blob([outCSV], { type: "text/csv;charset=utf-8" });
       const url = URL.createObjectURL(blob);
 
       const a = document.createElement("a");
