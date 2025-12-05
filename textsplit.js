@@ -59,8 +59,6 @@ function handleProcess() {
 }
 
 // Ask how to split the text
-<button onclick="myFunction()">Try it</button>
-<p id="splitPrompt"></p>
 
 let textSplitter
 
