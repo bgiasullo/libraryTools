@@ -7,7 +7,6 @@ body {
 }
 
 button {
-    cursor: pointer;
     padding: 12px;
     background-color: lightgreen;
 }
@@ -19,13 +18,10 @@ button {
     max-width: 888px;
 }
 
-input {
-    cursor: pointer;
-}
-
 li {
     padding: 4px;
 }
+
 summary {
     cursor: pointer;
 }
