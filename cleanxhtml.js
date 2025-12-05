@@ -43,6 +43,6 @@ function downloadCSV(rows) {
 
   const link = document.getElementById("downloadLink");
   link.href = url;
-  link.download = "pages.csv";
+  link.download = "Text.csv";
   link.textContent = "Download CSV";
 }
